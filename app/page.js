@@ -9,7 +9,6 @@ export default function Home() {
   useEffect(() => {
     setIsVisible(true)
 
-    // Auto-rotate features
     const interval = setInterval(() => {
       setActiveFeature((prev) => (prev + 1) % 3)
     }, 4000)
@@ -25,7 +24,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
         <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -60,16 +59,6 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
-
-              {/* <Link
-                href="/about"
-                className="group inline-flex items-center justify-center px-10 py-5 bg-white/80 backdrop-blur-sm border-2 border-slate-300 text-slate-700 font-bold rounded-2xl hover:border-slate-400 hover:bg-white/90 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
-              >
-                <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Learn More
-              </Link> */}
             </div>
           </div>
 

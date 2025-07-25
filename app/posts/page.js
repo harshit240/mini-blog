@@ -103,11 +103,6 @@ export default function PostsPage() {
 
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto mb-6 rounded-full shadow-lg"></div>
 
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-12">
-              Dive deep into our curated collection of insightful articles, tutorials, and thought-provoking content
-              from industry experts and passionate creators worldwide.
-            </p>
-
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
                 <div className="flex flex-col lg:flex-row gap-4 items-center">
@@ -160,7 +155,6 @@ export default function PostsPage() {
       </div>
 
 
-      {/* Post List Section */}
       <div className="max-w-7xl mx-auto px-6 pb-16">
         {loading ? (
           <div className="py-20">
@@ -180,14 +174,12 @@ export default function PostsPage() {
               ))}
             </div>
 
-            {/* Loader for infinite scroll */}
             {visibleCount < filteredPosts.length && (
               <div ref={loaderRef} className="mt-10 flex justify-center">
                 <Loader />
               </div>
             )}
 
-            {/* All posts loaded */}
             {filteredPosts.length > 0 && visibleCount >= filteredPosts.length && (
               <div className="text-center mt-16">
                 <div className="inline-flex items-center text-slate-500 text-sm">

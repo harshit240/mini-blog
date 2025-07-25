@@ -8,7 +8,6 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -18,7 +17,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
@@ -36,7 +34,6 @@ export default function Header() {
           ? 'bg-white/95 backdrop-blur-md shadow-2xl border-b border-slate-200/50'
           : 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 shadow-xl border-b border-slate-700/50'
         }`}>
-        {/* Background Pattern Overlay */}
         <div className={`absolute inset-0 transition-opacity duration-500 ${isScrolled ? 'opacity-0' : 'opacity-100'
           }`}>
           <div className={`absolute inset-0 bg-[url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")] opacity-20`}></div>
@@ -44,28 +41,23 @@ export default function Header() {
 
         <nav className="container mx-auto px-6 relative">
           <div className="flex justify-between items-center h-16 lg:h-20">
-            {/* Logo Section */}
             <div className="flex items-center space-x-4">
               <Link href="/" className="group flex items-center space-x-3">
-                {/* Logo Icon */}
                 <div className={`relative w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${isScrolled
                     ? 'bg-gradient-to-br from-blue-500 to-emerald-500 shadow-lg group-hover:shadow-xl group-hover:scale-105'
-                    : 'bg-gradient-to-br from-blue-400 to-emerald-400 group-hover:shadow-2xl group-hover:shadow-blue-500/25'
+                    : 'bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 group-hover:shadow-2xl group-hover:shadow-blue-500/25'
                   }`}>
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                   </svg>
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </div>
 
-                {/* Logo Text */}
                 <div className="hidden sm:block">
                   <h1 className={`text-2xl font-black transition-all duration-300 ${isScrolled
                       ? 'bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent'
                       : 'bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-emerald-300'
                     }`}>
-                    Mini Blog
                   </h1>
                 </div>
               </Link>
@@ -90,13 +82,11 @@ export default function Header() {
                   </svg>
                   <span>{item.label}</span>
 
-                  {/* Active indicator */}
                   {isActive(item.href) && (
                     <div className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full ${isScrolled ? 'bg-blue-500' : 'bg-emerald-400'
                       }`}></div>
                   )}
 
-                  {/* Hover underline for non-active items */}
                   {!isActive(item.href) && (
                     <span className={`absolute -bottom-1 left-4 right-4 h-0.5 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${isScrolled ? 'bg-slate-400' : 'bg-blue-400'
                       }`}></span>
@@ -104,14 +94,6 @@ export default function Header() {
                 </Link>
               ))}
 
-              {/* <div className="ml-4 pl-4 border-l border-slate-600/30">
-                <button className={`px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 ${isScrolled
-                    ? 'bg-gradient-to-r from-blue-600 to-emerald-600 text-white shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-emerald-700 transform hover:-translate-y-0.5'
-                    : 'bg-white/10 text-white backdrop-blur-sm border border-white/20 hover:bg-white/20 hover:border-white/30'
-                  }`}>
-                  Subscribe
-                </button>
-              </div> */}
             </div>
 
             <button
@@ -136,7 +118,6 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
         <div className={`md:hidden absolute top-full left-0 right-0 transition-all duration-300 ${isMobileMenuOpen
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4 pointer-events-none'
@@ -183,7 +164,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Spacer to prevent content from hiding behind fixed header */}
       <div className="h-16 lg:h-20"></div>
     </>
   )

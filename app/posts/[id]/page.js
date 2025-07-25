@@ -34,7 +34,6 @@ export default function PostDetail() {
 
   return (
     <div className="py-8">
-      {/* Breadcrumb */}
       <nav className="mb-8">
         <div className="flex items-center space-x-2 text-sm text-slate-500">
           <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
@@ -45,7 +44,6 @@ export default function PostDetail() {
         </div>
       </nav>
 
-      {/* Article Header */}
       <div className="max-w-4xl mx-auto">
         <article className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <div className="p-8 md:p-12">
@@ -58,7 +56,6 @@ export default function PostDetail() {
               </h1>
             </div>
 
-            {/* Author Info */}
             <div className="flex items-center space-x-4 mb-8 pb-8 border-b border-slate-200">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-emerald-400 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">
@@ -71,7 +68,6 @@ export default function PostDetail() {
               </div>
             </div>
 
-            {/* Article Content */}
             <div className="prose prose-lg max-w-none">
               <p className="text-slate-700 leading-relaxed text-lg">
                 {post.body}
@@ -80,7 +76,6 @@ export default function PostDetail() {
           </div>
         </article>
 
-        {/* Comments Section */}
         <div className="mt-12">
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
             <div className="flex items-center space-x-3 mb-8">
@@ -125,7 +120,6 @@ export default function PostDetail() {
           </div>
         </div>
 
-        {/* Back to Posts */}
         <div className="mt-8 text-center">
           <Link 
             href="/posts" 
